@@ -24,8 +24,8 @@
     <!--or something similar.-->
     <string name="app_name">Sunshine</string>
 
-    <!--TODO (1) Add a string for the title of the refresh button, "Refresh"-->
-
+    <!--DONE (1) Add a string for the title of the refresh button, "Refresh"-->
+    <string name="action_refresh">Refresh</string>
 
     <!-- - - - - - - - - - - - - -->
     <!--Used by SunshineDateUtils-->
@@ -39,7 +39,8 @@
 
     <!-- Date format [CHAR LIMIT=NONE] -->
     <string name="format_full_friendly_date">
-        <xliff:g id="month">%1$s</xliff:g>, <xliff:g id="day">%2$s</xliff:g>
+        <xliff:g id="month">%1$s</xliff:g>,
+        <xliff:g id="day">%2$s</xliff:g>
     </string>
 
 
@@ -59,12 +60,16 @@
 
     <!-- Wind in kph [CHAR LIMIT=25] -->
     <string name="format_wind_kmh">
-        <xliff:g id="speed">%1$1.0f</xliff:g> km/h <xliff:g id="direction">%2$s</xliff:g>
+        <xliff:g id="speed">%1$1.0f</xliff:g>
+        km/h
+        <xliff:g id="direction">%2$s</xliff:g>
     </string>
 
     <!-- Wind in mph [CHAR LIMIT=25] -->
     <string name="format_wind_mph">
-        <xliff:g id="speed">%1$1.0f</xliff:g> mph <xliff:g id="direction">%2$s</xliff:g>
+        <xliff:g id="speed">%1$1.0f</xliff:g>
+        mph
+        <xliff:g id="direction">%2$s</xliff:g>
     </string>
 
     <!-- Weather Conditions (From OpenWeatherMap) -->
@@ -125,7 +130,8 @@
     <string name="condition_961">Violent Storm</string>
     <string name="condition_962">Hurricane</string>
 
-    <string name="condition_unknown">Unknown (<xliff:g id="conditionId">%1$d</xliff:g>)</string>
+    <string name="condition_unknown">Unknown (<xliff:g id="conditionId">%1$d</xliff:g>)
+    </string>
 
 
     <!-- - - - - - - - - - - -->
