@@ -52,8 +52,15 @@ public class DetailActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.detail, menu);
         MenuItem menuItem = menu.findItem(R.id.action_share);
         menuItem.setIntent(createShareForecastIntent());
+        MenuItem settings = menu.findItem(R.id.action_settings);
+        settings.setIntent(createSettingsIntent());
         return true;
     }
 
-    // TODO (7) Launch SettingsActivity when the Settings option is clicked
+    private Intent createSettingsIntent() {
+        Intent settingsIntent = new Intent(this, SettingsActivity.class);
+        return settingsIntent;
+    }
+
+    // DONE (7) Launch SettingsActivity when the Settings option is clicked
 }
