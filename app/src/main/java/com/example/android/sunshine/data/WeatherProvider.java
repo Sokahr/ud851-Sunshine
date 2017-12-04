@@ -23,7 +23,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.support.annotation.NonNull;
-
 import com.example.android.sunshine.utilities.SunshineDateUtils;
 
 /**
@@ -293,7 +292,7 @@ public class WeatherProvider extends ContentProvider {
         return cursor;
     }
 
-//  TODO (1) Implement the delete method of the ContentProvider
+//  DONE (1) Implement the delete method of the ContentProvider
     /**
      * Deletes data at a given URI with optional arguments for more fine tuned deletions.
      *
@@ -304,11 +303,21 @@ public class WeatherProvider extends ContentProvider {
      */
     @Override
     public int delete(@NonNull Uri uri, String selection, String[] selectionArgs) {
-        throw new RuntimeException("Student, you need to implement the delete method!");
+        switch (sUriMatcher.match(uri)) {
+            case CODE_WEATHER:
+                SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+                int rowsDeleted = db.delete(WeatherContract.WeatherEntry.TABLE_NAME, selection, selectionArgs);
+                if (rowsDeleted > 0) {
+                    getContext().getContentResolver().notifyChange(uri, null);
+                }
+                return rowsDeleted;
+            default:
+                throw new UnsupportedOperationException("UNknown URI:" + uri);
+        }
 
-//          TODO (2) Only implement the functionality, given the proper URI, to delete ALL rows in the weather table
+//          DONE (2) Only implement the functionality, given the proper URI, to delete ALL rows in the weather table
 
-//      TODO (3) Return the number of rows deleted
+//      DONE (3) Return the number of rows deleted
     }
 
     /**
