@@ -18,14 +18,10 @@ package com.example.android.sunshine;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.preference.CheckBoxPreference;
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceFragmentCompat;
-import android.support.v7.preference.PreferenceScreen;
-
+import android.support.v7.preference.*;
 import com.example.android.sunshine.data.SunshinePreferences;
 import com.example.android.sunshine.data.WeatherContract;
+import com.example.android.sunshine.sync.SunshineSyncUtils;
 
 /**
  * The SettingsFragment serves as the display for all of the user's settings. In Sunshine, the
@@ -97,7 +93,8 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
             // we've changed the location
             // Wipe out any potential PlacePicker latlng values so that we can use this text entry.
             SunshinePreferences.resetLocationCoordinates(activity);
-            //  TODO (14) Sync the weather if the location changes
+            //  DONE (14) Sync the weather if the location changes
+            SunshineSyncUtils.startImmediateSync(getContext());
         } else if (key.equals(getString(R.string.pref_units_key))) {
             // units have changed. update lists of weather entries accordingly
             activity.getContentResolver().notifyChange(WeatherContract.WeatherEntry.CONTENT_URI, null);
