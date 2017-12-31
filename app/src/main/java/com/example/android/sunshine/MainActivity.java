@@ -31,7 +31,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
-
 import com.example.android.sunshine.data.SunshinePreferences;
 import com.example.android.sunshine.data.WeatherContract;
 import com.example.android.sunshine.sync.SunshineSyncUtils;
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor>,
         ForecastAdapter.ForecastAdapterOnClickHandler {
 
-//  TODO (2) Add dimens.xml, create and use dimensions for Sunshine's layouts
+//  DONE (2) Add dimens.xml, create and use dimensions for Sunshine's layouts
 
     private final String TAG = MainActivity.class.getSimpleName();
 
