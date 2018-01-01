@@ -14,6 +14,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   - This layout displays the complete details of a given day's weather, including the date, a    -
   - weather icon and description, the high and low temperature, the humidity, pressure, and the  -
